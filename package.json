@@ -1,0 +1,16 @@
+{
+  "name": "triangle-covid",
+  "version": "0.0.1",
+  "description": "A better summary of COVID wastewater data for RTP, NC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Donald Ball <donald.ball@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^6.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
