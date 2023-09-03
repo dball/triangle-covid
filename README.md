@@ -1,4 +1,4 @@
-# COVID Wastewater Summary for Orange and Durham counties, NC
+# COVID Wastewater Summary for RTP, NC
 
 The COVID wastewater data made available by the NC DHHS are not easy to compare and collate across counties and sites, so I decided to make my own summaries:
 
