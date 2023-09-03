@@ -1,10 +1,25 @@
 import * as csv from "csv/sync";
 import * as fs from "node:fs/promises";
 
-export const parse = async (): Promise<Array<Record>> => {
-  const data = await fs.readFile("Viral Gene Copies Persons.csv", {
-    encoding: "utf16le",
-  });
+export const config: Config = {
+  source: "source/Viral Gene Copies Persons.csv",
+  regions: new Map(
+    Object.entries({
+      "Durham, Chapel Hill": new Set(["Orange", "Durham"]),
+      Raleigh: new Set(["Wake"]),
+      Triangle: new Set(["Orange", "Durham", "Wake"]),
+    })
+  ),
+  dest: "summaries",
+};
+
+export interface Config {
+  source: string;
+  regions: Map<string, Set<string>>;
+  dest: string;
+}
+
+export const parse = (data: string): Array<Record> => {
   return csv.parse(data, {
     columns: true,
     delimiter: "\t",
@@ -36,8 +51,6 @@ export interface Record {
   "Viral Gene Copies Per Person": number;
   "Viral Gene Copies/L": number;
 }
-
-export const counties = new Set(["Orange", "Durham"]);
 
 export const summarize = (counties: Set<string>, records: Array<Record>) => {
   const populationsBySite: Map<string, number> = new Map();
@@ -98,8 +111,15 @@ export const summarize = (counties: Set<string>, records: Array<Record>) => {
 };
 
 export const main = async () => {
-  const records = await parse();
-  const summary = summarize(counties, records);
-  const data = csv.stringify(summary, { header: true });
-  await fs.writeFile("summary.csv", data);
+  const data = await fs.readFile(config.source, { encoding: "utf16le" });
+  const records = parse(data);
+  for (const [region, counties] of config.regions) {
+    const summary = summarize(counties, records);
+    const output = csv.stringify(summary, { header: true });
+    await fs.writeFile(`summaries/${region}.csv`, output);
+  }
 };
+
+if (require.main === module) {
+  main();
+}
