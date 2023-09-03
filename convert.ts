@@ -11,12 +11,14 @@ export const config: Config = {
     })
   ),
   dest: "summaries",
+  maxViralGeneCopiesPerPerson: 800000000,
 };
 
 export interface Config {
   source: string;
   regions: Map<string, Set<string>>;
   dest: string;
+  maxViralGeneCopiesPerPerson: number;
 }
 
 export const parse = (data: string): Array<Record> => {
@@ -40,6 +42,17 @@ export const parse = (data: string): Array<Record> => {
       }
     },
   });
+};
+
+export const filter = (
+  config: Config,
+  records: Array<Record>
+): Array<Record> => {
+  return records.filter(
+    (record) =>
+      record["Viral Gene Copies Per Person"] <
+      config.maxViralGeneCopiesPerPerson
+  );
 };
 
 export interface Record {
@@ -112,7 +125,7 @@ export const summarize = (counties: Set<string>, records: Array<Record>) => {
 
 export const main = async () => {
   const data = await fs.readFile(config.source, { encoding: "utf16le" });
-  const records = parse(data);
+  const records = filter(config, parse(data));
   for (const [region, counties] of config.regions) {
     const summary = summarize(counties, records);
     const output = csv.stringify(summary, { header: true });

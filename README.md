@@ -29,6 +29,8 @@ The summarizer will throw an error if site populations change over time, indicat
 
 It might be better to account for missing data by extrapolating from nearby points, or instead by ignoring the site and its population in the aggregate computation, but since missing data are uncommon, I think it's better to err on the side of simplicity and auditability.
 
+This excludes observations with viral gene copies per person over a threshold, which I think indicate a measurement error and distort the time series graph. I intend to follow up with a more statistically grounded filtering pass. In our corpus, there is one such measurement in Raleigh from 2022-01-14.
+
 ## Conclusion
 
 If these data and my summary are correct, and if COVID case counts correlate
