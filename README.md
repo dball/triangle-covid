@@ -1,16 +1,18 @@
 # COVID Wastewater Summary for Orange and Durham counties, NC
 
-The COVID wastewater data made available by the NC DHHS are not easy to compare and collate across counties and sites, so I decided to make my own summary. The picture is not a good one:
+The COVID wastewater data made available by the NC DHHS are not easy to compare and collate across counties and sites, so I decided to make my own summaries:
 
-![COVID Wastewater Data](./COVID%20in%20Orange%20and%20Durham%20county%20wastewater.png)
+- ![Durham, Chapel Hill](./figures/Viral%20Particles%20Per%20Person%20Durham,%20Chapel%20Hill.svg)
+- ![Raleigh](./figures/Viral%20Particles%20Per%20Person%20Raleigh.svg)
+- ![Triangle](./figures/Viral%20Particles%20Per%20Person%20Triangle.svg)
 
-I intend to update this every Wednesday as the NC DHHS makes the wastewater data for the previous week available. I also intend to produce figures that focus on Raleigh, and that combine the greater triangle area for those with broader risk exposures.
+I intend to update this every Wednesday as the NC DHHS makes the wastewater data for the previous week available.
 
 I **welcome** issues and pull requests. I am neither a statistician nor an epidemiologist, merely an educated citizen with a strong interest in public health.
 
 ## Methodology
 
-We have a csv file from NC DHHS that gives us a row for each site, county, date, the site population, and the viral gene copies per person. I'm interested in aggregating these data across the counties to which I'm broadly exposed, namely Orange and Durham counties.
+We have a csv file from NC DHHS that gives us a row for each site, county, date, the site population, and the viral gene copies per person. I'm interested in aggregating these data across the counties to which I'm broadly exposed.
 
 Not every site provides data on every date; some sites came online later than others, and some sites miss some data collection windows. The site populations as stated are constant over time, another limitation of the underlying data.
 
@@ -45,5 +47,5 @@ PASC or Long COVID, should not be understated.
 
 ## References
 
-- [NC DHHS COVID Wastewater Dashboard](https://covid19.ncdhhs.gov/dashboard/wastewater-monitoring) (Note the default dashboard includes a dramatic outlier from 2021 that has the incidental effect of obscuring the severity of all other waves.)
+- [NC DHHS COVID Wastewater Dashboard](https://covid19.ncdhhs.gov/dashboard/wastewater-monitoring) (Note the default dashboard includes a dramatic outlier that has the incidental effect of obscuring the severity of all other waves.)
 - [NC DHHS COVID Wastewater Data](https://covid19.ncdhhs.gov/dashboard/data-behind-dashboards)
