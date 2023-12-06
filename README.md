@@ -2,15 +2,20 @@
 
 The COVID wastewater data made available by the NC DHHS are not easy to compare and collate across counties and sites, so I decided to make my own summaries:
 
-- ![Durham, Chapel Hill](./figures/Viral%20Particles%20Per%20Person%20Durham,%20Chapel%20Hill%202023-11-22.svg)
-- ![Raleigh](./figures/Viral%20Particles%20Per%20Person%20Raleigh%202023-11-22.svg)
-- ![Triangle](./figures/Viral%20Particles%20Per%20Person%20Triangle%202023-11-22.svg)
+- ![Durham, Chapel Hill](./figures/Viral%20Particles%20Per%20Person%20Durham,%20Chapel%20Hill%202023-11-29.svg)
+- ![Raleigh](./figures/Viral%20Particles%20Per%20Person%20Raleigh%202023-11-29.svg)
+- ![Triangle](./figures/Viral%20Particles%20Per%20Person%20Triangle%202023-11-29.svg)
 
 I intend to update this every Wednesday as the NC DHHS makes the wastewater data for the previous week available.
 
 These figures include a linear trend line which, while a poor model of the phenomenon, is a reasonable visual indication of the inexorably upward long-term trend.
 
 I **welcome** issues and pull requests. I am neither a statistician nor an epidemiologist, merely an educated citizen with a strong interest in public health.
+
+**NOTE**: The NC DHHS dashboard reports data through 11/29/2023, but the underlying datasets are only complete
+through 11/15/2023. No one at the NC DHHS has seen fit to answer my inquiries, so in service of providing
+my audience with the best available aggregate data, I transcribed the data from the figures into my csv "source". Unfortunately, the graph only reports the data points to the nearest million. I suspect this doesn't change
+the aggregate picture much, considering how variable the sampled data are over the course of days at a given site, but wanted to be transparent about this regrettable and unnecessary imprecision.
 
 ## Methodology
 
