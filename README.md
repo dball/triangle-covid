@@ -12,11 +12,6 @@ These figures include a linear trend line which, while a poor model of the pheno
 
 I **welcome** issues and pull requests. I am neither a statistician nor an epidemiologist, merely an educated citizen with a strong interest in public health.
 
-**NOTE**: The NC DHHS dashboard reports data through 11/29/2023, but the underlying datasets are only complete
-through 11/15/2023. No one at the NC DHHS has seen fit to answer my inquiries, so in service of providing
-my audience with the best available aggregate data, I transcribed the data from the figures into my csv "source". Unfortunately, the graph only reports the data points to the nearest million. I suspect this doesn't change
-the aggregate picture much, considering how variable the sampled data are over the course of days at a given site, but wanted to be transparent about this regrettable and unnecessary imprecision.
-
 ## Methodology
 
 We have a csv file from NC DHHS that gives us a row for each site, county, date, the site population, and the viral gene copies per person. I'm interested in aggregating these data across the counties to which I'm broadly exposed.
