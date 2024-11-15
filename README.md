@@ -2,9 +2,9 @@
 
 The COVID wastewater data made available by the NC DHHS are not easy to compare and collate across counties and sites, so I decided to make my own summaries:
 
-- ![Durham, Chapel Hill](./figures/Viral%20Particles%20Per%20Person%20Durham,%20Chapel%20Hill%202024-11-06.svg)
-- ![Raleigh](./figures/Viral%20Particles%20Per%20Person%20Raleigh%202024-11-06.svg)
-- ![Triangle](./figures/Viral%20Particles%20Per%20Person%20Triangle%202024-11-06.svg)
+- ![Durham, Chapel Hill](./figures/Viral%20Particles%20Per%20Person%20Durham,%20Chapel%20Hill%202024-11-13.svg)
+- ![Raleigh](./figures/Viral%20Particles%20Per%20Person%20Raleigh%202024-11-13.svg)
+- ![Triangle](./figures/Viral%20Particles%20Per%20Person%20Triangle%202024-11-13.svg)
 
 I intend to update this every Wednesday as the NC DHHS makes the wastewater data for the previous week available.
 
