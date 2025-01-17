@@ -2,7 +2,7 @@ import * as csv from "csv/sync";
 import * as fs from "node:fs/promises";
 
 export const config: Config = {
-  source: "source/Viral Gene Copies Persons.csv",
+  source: "source/Viral Gene Copies Persons-COVID.csv",
   regions: new Map(
     Object.entries({
       "Durham, Chapel Hill": new Set(["Orange", "Durham"]),
@@ -33,9 +33,8 @@ export const parse = (data: string): Array<Record> => {
         case "Index":
           // TODO wtf is this not catching?
           return Number(value);
-        case "Population Served":
+        case "population_served":
         case "Viral Gene Copies Per Person":
-        case "Viral Gene Copies/L":
           return Number(value.replace(/,/g, ""));
         default:
           return value;
@@ -60,9 +59,8 @@ export interface Record {
   County: string;
   Date: string;
   "Wastewater Treatment Plant": string;
-  "Population Served": number;
+  "population_served": number;
   "Viral Gene Copies Per Person": number;
-  "Viral Gene Copies/L": number;
 }
 
 export const summarize = (counties: Set<string>, records: Array<Record>) => {
@@ -75,7 +73,7 @@ export const summarize = (counties: Set<string>, records: Array<Record>) => {
     if (!counties.has(record.County)) {
       continue;
     }
-    const population = record["Population Served"];
+    const population = record["population_served"];
     if (
       populationsBySite.has(record["Wastewater Treatment Plant"]) &&
       populationsBySite.get(record["Wastewater Treatment Plant"]) != population
