@@ -33,7 +33,7 @@ export const parse = (data: string): Array<Record> => {
         case "Index":
           // TODO wtf is this not catching?
           return Number(value);
-        case "population_served":
+        case "Population Served":
         case "Viral Gene Copies Per Person":
           return Number(value.replace(/,/g, ""));
         default:
@@ -59,7 +59,7 @@ export interface Record {
   County: string;
   Date: string;
   "Wastewater Treatment Plant": string;
-  "population_served": number;
+  "Population Served": number;
   "Viral Gene Copies Per Person": number;
 }
 
@@ -73,7 +73,7 @@ export const summarize = (counties: Set<string>, records: Array<Record>) => {
     if (!counties.has(record.County)) {
       continue;
     }
-    const population = record["population_served"];
+    const population = record["Population Served"];
     if (
       populationsBySite.has(record["Wastewater Treatment Plant"]) &&
       populationsBySite.get(record["Wastewater Treatment Plant"]) != population
