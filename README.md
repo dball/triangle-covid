@@ -49,8 +49,8 @@ PASC or Long COVID, should not be understated.
 
 ## References
 
-- [NC DHHS COVID Wastewater Dashboard](https://covid19.ncdhhs.gov/dashboard/wastewater-monitoring) (Note the default dashboard includes a dramatic outlier that has the incidental effect of obscuring the severity of all other waves.)
 - [NC DHHS COVID Wastewater Data](https://covid19.ncdhhs.gov/dashboard/data-behind-dashboards)
+- [NC DHHS COVID Wastewater Dashboard](https://covid19.ncdhhs.gov/dashboard/wastewater-monitoring) (Note the default dashboard includes a dramatic outlier that has the incidental effect of obscuring the severity of all other waves.)
 - [CDC NWSS](https://www.cdc.gov/nwss/rv/COVID19-statetrend.html)
 
 ## Similar Projects
