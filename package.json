@@ -4,12 +4,17 @@
   "description": "A better summary of COVID wastewater data for RTP, NC",
   "scripts": {
     "convert": "ts-node convert.ts",
+    "figures": "ts-node render.ts",
+    "build": "npm run convert && npm run figures",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Donald Ball <donald.ball@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "csv": "^6.3.3"
+    "csv": "^6.3.3",
+    "sharp": "^0.35.2",
+    "vega": "^6.2.0",
+    "vega-lite": "^6.4.3"
   },
   "devDependencies": {
     "ts-node": "^10.9.1"
